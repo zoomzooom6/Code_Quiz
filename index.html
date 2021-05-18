@@ -5,29 +5,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Quiz</title>
     <link rel="stylesheet" href="assets/css/style.css" />
-    <title>Document</title>
 </head>
 
 <body>
     <header>
-        <section>
-            <h3 id="high-scores">View high scores</h3>
-            <h3 id="timer">Time: </h3>
-            <h3 id="time-left"> </h3>
-        </section>
+        <h3 id="high-scores">View high scores</h3>
+        <h3 id="timer"></h3>
     </header>
     <main>
         <section>
-            <h2 id="question-ask"></h2>
-            <p class="ans" id="ans0"></p>
-            <p class="ans" id="ans1"></p>
-            <p class="ans" id="ans2"></p>
-            <p class="ans" id="ans3"></p>
+            <div>
+                <h2 id="game-over"></h2>
+            </div>
+            <div>
+                <h2 class="ques" id="question-ask"></h2>
+                <button class="ans" id="ans0"></button>
+                <button class="ans" id="ans1"></button>
+                <button class="ans" id="ans2"></button>
+                <button class="ans" id="ans3"></button>
+            </div>
+            <div>
+                <button class="btn" id="start">Start!</button>
+            </div>
         </section>
     </main>
     <footer>
-        <h3 class="guess-result"> </h3>
+        <h3 id="guess-result"></h3>
     </footer>
     <script src="assets/javascript/script.js"></script>
 </body>
