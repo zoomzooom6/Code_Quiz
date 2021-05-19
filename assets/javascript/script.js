@@ -70,6 +70,9 @@ function countdown() {
     a1Disp.style.display = "";
     a2Disp.style.display = "";
     a3Disp.style.display = "";
+    enterInitials.style.display = "none";
+    saveScore.style.display = "none";
+    clearScore.style.display = "none";
     srtBtn.style.display = "none";
     gameOver.textContent = "";
     guessResult.textContent = "";
