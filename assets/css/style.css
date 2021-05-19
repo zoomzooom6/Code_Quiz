@@ -5,6 +5,7 @@
 :root {
     --primary: #ffeeee;
     --secondary: #0941db;
+    --tertiary: #6f90e9;
 }
 
 body {
@@ -54,6 +55,10 @@ footer {
     border-radius: 8px;
 }
 
+.ans:hover {
+    background-color: var(--tertiary);
+}
+
 .btn {
     outline: none;
     border: none;
@@ -71,6 +76,7 @@ footer {
 .btn:hover {
     box-shadow: 0 2px var(--grey);
     top: -2px;
+    background-color: var(--tertiary);
 }
 
 section {
