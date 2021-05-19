@@ -36,11 +36,40 @@ footer {
     font-style: italic;
 }
 
+form button{
+    margin: 10px;
+}
+
+form input {
+    outline: none;
+    border: none;
+    padding: 8px;
+    margin: 15px;
+    width: 50%;
+    font-size: 18px;
+    border: 2px solid var(--secondary);
+    border-radius: 12px;
+}
+
 .high-scores {
     border: none;
     background-color: var(--primary);
     color: var(--secondary);
     font-size: 20px;
+}
+
+.sbt {
+    outline: none;
+    border: none;
+    display: inline-block;
+    padding: 10px 15px;
+    background: var(--secondary);
+    font-size: 16px;
+    border-radius: 12px;
+    position: relative;
+    top: -3px;
+    box-shadow: 0 3px var(--grey);
+    color: white;
 }
 
 .ans {
@@ -53,10 +82,6 @@ footer {
     padding: 10px;
     margin: 5px;
     border-radius: 8px;
-}
-
-.ans:hover {
-    background-color: var(--tertiary);
 }
 
 .btn {
@@ -73,7 +98,9 @@ footer {
     color: white;
 }
 
-.btn:hover {
+.btn:hover,
+.ans:hover,
+.sbt:hover {
     box-shadow: 0 2px var(--grey);
     top: -2px;
     background-color: var(--tertiary);

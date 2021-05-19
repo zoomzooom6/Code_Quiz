@@ -9,36 +9,39 @@ var a3Disp = document.getElementById('ans3');
 var guessResult = document.getElementById('guess-result');
 var gameOver = document.getElementById('game-over');
 var highScores = document.getElementById('highScore');
+var enterInitials = document.getElementById('initials');
+var saveScore = document.getElementById('save-initials');
+var clearScore = document.getElementById('clear-high-score');
 
 var qArray = [
-    "Commonly used data types do NOT include: ", 
-    "Which tag is the correct element for calling JavaScript?", 
-    "How do you find the number with the highest value of x and y?", 
-    "What event occurs when a user clicks on an HTML element?", 
+    "Commonly used data types do NOT include: ",
+    "Which tag is the correct element for calling JavaScript?",
+    "How do you find the number with the highest value of x and y?",
+    "What event occurs when a user clicks on an HTML element?",
     "How do you make a numbered list?"]
 var ansOp0 = [
-    "1. Boolean", 
-    "1. <js>", 
-    "1. Math.ceil(x, y)", 
-    "1. onmouseover", 
+    "1. Boolean",
+    "1. <js>",
+    "1. Math.ceil(x, y)",
+    "1. onmouseover",
     "1. <dl>"]
 var ansOp1 = [
-    "2. String", 
-    "2. <script>", 
-    "2. upper(x, y)", 
-    "2. onchange", 
+    "2. String",
+    "2. <script>",
+    "2. upper(x, y)",
+    "2. onchange",
     "2. <list>"]
 var ansOp2 = [
-    "3. Alerts", 
-    "3. <javascript>", 
-    "3. Math.max(x, y)", 
-    "3. onmouseclick", 
+    "3. Alerts",
+    "3. <javascript>",
+    "3. Math.max(x, y)",
+    "3. onmouseclick",
     "3. <ul>"]
 var ansOp3 = [
-    "4. Numbers", 
-    "4. <scripts>", 
-    "4. ceil(x, y)", 
-    "4. onclick", 
+    "4. Numbers",
+    "4. <scripts>",
+    "4. ceil(x, y)",
+    "4. onclick",
     "4. <ol>"]
 var timeLeft = 60;
 var i = 0;
@@ -48,6 +51,9 @@ qDisp.textContent = "Coding Quiz Challenge"
 iDisp.textContent = "Welcome to the coding challenge! \r\n";
 iDisp.textContent += "Test your knowledge with these questions, but be warned, you will lose 10 seconds for every wrong answer. \r\n";
 iDisp.textContent += "Click the Start to begin!";
+enterInitials.style.display = "none";
+saveScore.style.display = "none";
+clearScore.style.display = "none";
 a0Disp.style.display = "none";
 a1Disp.style.display = "none";
 a2Disp.style.display = "none";
@@ -79,6 +85,9 @@ function countdown() {
             qDisp.textContent = "Score: " + score;
             srtBtn.textContent = "Retry";
             srtBtn.style.display = "";
+            enterInitials.style.display = "";
+            saveScore.style.display = "";
+            clearScore.style.display = "";
             a0Disp.style.display = "none";
             a1Disp.style.display = "none";
             a2Disp.style.display = "none";
@@ -97,7 +106,7 @@ function displayQuiz() {
 
 srtBtn.addEventListener("click", countdown);
 srtBtn.addEventListener("click", displayQuiz);
-highScores.addEventListener("click", function() {
+highScores.addEventListener("click", function () {
 
 });
 
