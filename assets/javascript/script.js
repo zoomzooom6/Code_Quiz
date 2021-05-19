@@ -23,15 +23,18 @@ a3Disp.style.display = "none";
 
 function countdown() {
 
+    i = 0;
+    timeLeft = 60;
+    qDisp.style.display = "";
     a0Disp.style.display = "";
     a1Disp.style.display = "";
     a2Disp.style.display = "";
     a3Disp.style.display = "";
     srtBtn.style.display = "none";
+    gameOver.textContent = "";
 
     var timeInt = setInterval(function () {
         if (timeLeft > 0) {
-            gameOver.textContent = "";
             timerE1.textContent = "Timer: " + timeLeft;
             timeLeft--;
         } else {
