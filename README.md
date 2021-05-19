@@ -28,13 +28,13 @@ Designed by Tony Huang.
 ## Final Results
 
 ### Main start page
-<img src="#" alt="Main start page" />
+<img src="./assets/images/StartPage.jpg" alt="Main start page" />
 
 ### Sample question page
-<img src="#" alt="Example question page" />
+<img src="./assets/images/QuestionSample.jpg" alt="Example question page" />
 
 ### End of quiz page
-<img src="#" alt="End of quiz page" />
+<img src="./assets/images/GameOver.jpg" alt="End of quiz page" />
 
 ### High scores view
-<img src="#" alt="High scores list view" />
+<img src="./assets/images/HighScores.jpg" alt="High scores list view" />
