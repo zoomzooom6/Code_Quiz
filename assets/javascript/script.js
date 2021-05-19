@@ -51,28 +51,14 @@ qDisp.textContent = "Coding Quiz Challenge"
 iDisp.textContent = "Welcome to the coding challenge! \r\n";
 iDisp.textContent += "Test your knowledge with these questions, but be warned, you will lose 10 seconds for every wrong answer. \r\n";
 iDisp.textContent += "Click the Start to begin!";
-enterInitials.style.display = "none";
-saveScore.style.display = "none";
-clearScore.style.display = "none";
-a0Disp.style.display = "none";
-a1Disp.style.display = "none";
-a2Disp.style.display = "none";
-a3Disp.style.display = "none";
+hideScore();
+hideQuiz();
 
 function countdown() {
 
-    i = 0;
-    timeLeft = 60;
-    score = 0;
-    qDisp.style.display = "";
-    iDisp.textContent = "";
-    a0Disp.style.display = "";
-    a1Disp.style.display = "";
-    a2Disp.style.display = "";
-    a3Disp.style.display = "";
-    enterInitials.style.display = "none";
-    saveScore.style.display = "none";
-    clearScore.style.display = "none";
+    resetGame();
+    showQuiz();
+    hideScore();
     srtBtn.style.display = "none";
     gameOver.textContent = "";
     guessResult.textContent = "";
@@ -88,13 +74,8 @@ function countdown() {
             qDisp.textContent = "Score: " + score;
             srtBtn.textContent = "Retry";
             srtBtn.style.display = "";
-            enterInitials.style.display = "";
-            saveScore.style.display = "";
-            clearScore.style.display = "";
-            a0Disp.style.display = "none";
-            a1Disp.style.display = "none";
-            a2Disp.style.display = "none";
-            a3Disp.style.display = "none";
+            showScore();
+            hideQuiz();
         }
     }, 1000);
 }
@@ -105,6 +86,40 @@ function displayQuiz() {
     a1Disp.textContent = ansOp1[i];
     a2Disp.textContent = ansOp2[i];
     a3Disp.textContent = ansOp3[i];
+}
+
+function hideQuiz() {
+    a0Disp.style.display = "none";
+    a1Disp.style.display = "none";
+    a2Disp.style.display = "none";
+    a3Disp.style.display = "none";
+}
+
+function showQuiz() {
+    qDisp.style.display = "";
+    iDisp.textContent = "";
+    a0Disp.style.display = "";
+    a1Disp.style.display = "";
+    a2Disp.style.display = "";
+    a3Disp.style.display = "";
+}
+
+function hideScore() {
+    enterInitials.style.display = "none";
+    saveScore.style.display = "none";
+    clearScore.style.display = "none";
+}
+
+function showScore() {
+    enterInitials.style.display = "";
+    saveScore.style.display = "";
+    clearScore.style.display = "";
+}
+
+function resetGame() {
+    i = 0;
+    timeLeft = 60;
+    score = 0;
 }
 
 srtBtn.addEventListener("click", countdown);
@@ -223,4 +238,12 @@ a3Disp.addEventListener("click", function () {
             timeLeft = 0;
             break;
     }
+});
+
+saveScore.addEventListener("click", function() {
+
+});
+
+clearScore.addEventListener("click", function() {
+
 });
