@@ -76,3 +76,7 @@ footer {
 section {
     display: inline;
 }
+
+#intro {
+    white-space: pre;
+}

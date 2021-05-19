@@ -1,6 +1,7 @@
 var timerE1 = document.getElementById('timer');
 var srtBtn = document.getElementById('start');
 var qDisp = document.getElementById('question-ask');
+var iDisp = document.getElementById('intro');
 var a0Disp = document.getElementById('ans0');
 var a1Disp = document.getElementById('ans1');
 var a2Disp = document.getElementById('ans2');
@@ -43,6 +44,10 @@ var timeLeft = 60;
 var i = 0;
 var score = 0;
 
+qDisp.textContent = "Coding Quiz Challenge"
+iDisp.textContent = "Welcome to the coding challenge! \r\n";
+iDisp.textContent += "Test your knowledge with these questions, but be warned, you will lose 10 seconds for every wrong answer. \r\n";
+iDisp.textContent += "Click the Start to begin!";
 a0Disp.style.display = "none";
 a1Disp.style.display = "none";
 a2Disp.style.display = "none";
@@ -54,6 +59,7 @@ function countdown() {
     timeLeft = 60;
     score = 0;
     qDisp.style.display = "";
+    iDisp.textContent = "";
     a0Disp.style.display = "";
     a1Disp.style.display = "";
     a2Disp.style.display = "";
