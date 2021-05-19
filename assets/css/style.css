@@ -32,15 +32,26 @@ main {
 footer {
     border-top: 2px solid grey;
     text-align: center;
+    font-style: italic;
+}
+
+.high-scores {
+    border: none;
+    background-color: var(--primary);
+    color: var(--secondary);
+    font-size: 20px;
 }
 
 .ans {
     width: 50vw;
     text-align: left;
     border: none;
-    background-color: var(--primary);
-    color: var(--secondary);
+    background-color: var(--secondary);
+    color: var(--primary);
     font-size: 16px;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 8px;
 }
 
 .btn {

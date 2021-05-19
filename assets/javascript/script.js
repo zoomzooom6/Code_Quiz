@@ -7,14 +7,41 @@ var a2Disp = document.getElementById('ans2');
 var a3Disp = document.getElementById('ans3');
 var guessResult = document.getElementById('guess-result');
 var gameOver = document.getElementById('game-over');
+var highScores = document.getElementById('highScore');
 
-var qArray = ["Question 1", "Question 2", "Question 3", "Question 4", "Question 5"]
-var ansOp0 = ["Q1 Ans1", "Q2 Ans1", "Q3 Ans1", "Q4 Ans1", "Q5 Ans1"]
-var ansOp1 = ["Q1 Ans2", "Q2 Ans2", "Q3 Ans2", "Q4 Ans2", "Q5 Ans2"]
-var ansOp2 = ["Q1 Ans3", "Q2 Ans3", "Q3 Ans3", "Q4 Ans3", "Q5 Ans3"]
-var ansOp3 = ["Q1 Ans4", "Q2 Ans4", "Q3 Ans4", "Q4 Ans4", "Q5 Ans4"]
+var qArray = [
+    "Commonly used data types do NOT include: ", 
+    "Which tag is the correct element for calling JavaScript?", 
+    "How do you find the number with the highest value of x and y?", 
+    "What event occurs when a user clicks on an HTML element?", 
+    "How do you make a numbered list?"]
+var ansOp0 = [
+    "1. Boolean", 
+    "1. <js>", 
+    "1. Math.ceil(x, y)", 
+    "1. onmouseover", 
+    "1. <dl>"]
+var ansOp1 = [
+    "2. String", 
+    "2. <script>", 
+    "2. upper(x, y)", 
+    "2. onchange", 
+    "2. <list>"]
+var ansOp2 = [
+    "3. Alerts", 
+    "3. <javascript>", 
+    "3. Math.max(x, y)", 
+    "3. onmouseclick", 
+    "3. <ul>"]
+var ansOp3 = [
+    "4. Numbers", 
+    "4. <scripts>", 
+    "4. ceil(x, y)", 
+    "4. onclick", 
+    "4. <ol>"]
 var timeLeft = 60;
 var i = 0;
+var score = 0;
 
 a0Disp.style.display = "none";
 a1Disp.style.display = "none";
@@ -25,6 +52,7 @@ function countdown() {
 
     i = 0;
     timeLeft = 60;
+    score = 0;
     qDisp.style.display = "";
     a0Disp.style.display = "";
     a1Disp.style.display = "";
@@ -32,6 +60,7 @@ function countdown() {
     a3Disp.style.display = "";
     srtBtn.style.display = "none";
     gameOver.textContent = "";
+    guessResult.textContent = "";
 
     var timeInt = setInterval(function () {
         if (timeLeft > 0) {
@@ -41,9 +70,9 @@ function countdown() {
             timerE1.textContent = "Time's up!";
             clearInterval(timeInt);
             gameOver.textContent = "Game Over!";
+            qDisp.textContent = "Score: " + score;
             srtBtn.textContent = "Retry";
             srtBtn.style.display = "";
-            qDisp.style.display = "none";
             a0Disp.style.display = "none";
             a1Disp.style.display = "none";
             a2Disp.style.display = "none";
@@ -62,6 +91,9 @@ function displayQuiz() {
 
 srtBtn.addEventListener("click", countdown);
 srtBtn.addEventListener("click", displayQuiz);
+highScores.addEventListener("click", function() {
+
+});
 
 a0Disp.addEventListener("click", function () {
     switch (i) {
@@ -85,9 +117,8 @@ a0Disp.addEventListener("click", function () {
             timeLeft = timeLeft - 10;
             break;
         case 4: guessResult.textContent = "Wrong!";
+            score = timeLeft;
             timeLeft = 0;
-            displayQuiz();
-            guessResult.textContent = "";
             break;
     }
 });
@@ -114,9 +145,8 @@ a1Disp.addEventListener("click", function () {
             timeLeft = timeLeft - 10;
             break;
         case 4: guessResult.textContent = "Wrong!";
+            score = timeLeft;
             timeLeft = 0;
-            displayQuiz();
-            guessResult.textContent = "";
             break;
     }
 });
@@ -143,9 +173,8 @@ a2Disp.addEventListener("click", function () {
             timeLeft = timeLeft - 10;
             break;
         case 4: guessResult.textContent = "Wrong!";
+            score = timeLeft;
             timeLeft = 0;
-            displayQuiz();
-            guessResult.textContent = "";
             break;
     }
 });
@@ -172,9 +201,8 @@ a3Disp.addEventListener("click", function () {
             displayQuiz();
             break;
         case 4: guessResult.textContent = "Correct!";
+            score = timeLeft;
             timeLeft = 0;
-            displayQuiz();
-            guessResult.textContent = "";
             break;
     }
 });
