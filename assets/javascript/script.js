@@ -157,7 +157,6 @@ var loadScores = function() {
 srtBtn.addEventListener("click", countdown);
 srtBtn.addEventListener("click", displayQuiz);
 highScores.addEventListener("click", function () {
-    console.log("clicked view high score button");
     var scoreDisp = "";
 
     for (var i = 0; i < highScore.length; i++) {
