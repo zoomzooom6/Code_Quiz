@@ -12,6 +12,8 @@ var highScores = document.getElementById('highScore');
 var enterInitials = document.getElementById('initials');
 var saveScore = document.getElementById('save-initials');
 var clearScore = document.getElementById('clear-high-score');
+var histScore = document.getElementById('high-score');
+var highScore = [];
 
 var qArray = [
     "Commonly used data types do NOT include: ",
@@ -71,6 +73,7 @@ function countdown() {
             timerE1.textContent = "Time's up!";
             clearInterval(timeInt);
             gameOver.textContent = "Game Over!";
+            endGame();
             qDisp.textContent = "Score: " + score;
             srtBtn.textContent = "Retry";
             srtBtn.style.display = "";
@@ -122,10 +125,46 @@ function resetGame() {
     score = 0;
 }
 
+function endGame() {
+    if (score > highScore[1]) {
+        showScore();
+        guessResult.textContent = "Congratulations! You set a new high score!";
+    } else {
+        hideScore();
+        guessResult.textContent = "Sorry, you did not beat the high score.";
+    }
+    return; 
+}
+
+var saveScores = function() {
+    localStorage.setItem("highScore", JSON.stringify(highScore));
+}
+
+var loadScores = function() {
+    var savedScores = localStorage.getItem("highScore");
+
+    if (savedScores === null) {
+        return false;
+    }
+
+    savedScores = JSON.parse(savedScores);
+
+    for (var i = 0; i < highScore.length; i++) {
+        highScore.push(savedScores[i]);
+    }
+}
+
 srtBtn.addEventListener("click", countdown);
 srtBtn.addEventListener("click", displayQuiz);
 highScores.addEventListener("click", function () {
+    console.log("clicked view high score button");
+    var scoreDisp = "";
 
+    for (var i = 0; i < highScore.length; i++) {
+        scoreDisp.concat(highScore[i].toString());
+    }
+
+    histScore.textContent = scoreDisp;
 });
 
 a0Disp.addEventListener("click", function () {
@@ -241,9 +280,14 @@ a3Disp.addEventListener("click", function () {
 });
 
 saveScore.addEventListener("click", function() {
-
+    highScore.pop();
+    highScore.pop();
+    highScore.push(enterInitials.value, score);
+    saveScores();
 });
 
 clearScore.addEventListener("click", function() {
-
+    localStorage.clear();
 });
+
+loadScores();
